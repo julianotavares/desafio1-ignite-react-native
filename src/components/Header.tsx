@@ -16,8 +16,8 @@ export function Header({ tasksCounter }: HeaderProps) {
       <Image source={logoImg} />
       
       <View style={styles.tasks}>
-        <Text style={styles.tasksCounter}>Você tem </Text>
-        <Text style={styles.tasksCounterBold}>{tasksCounter} {tasksCounterText}</Text>
+        <Text style={styles.tasksCounter}>{tasksCounter >= 1 ? "Você tem " : "Sem tarefas"}</Text>
+        {tasksCounter >= 1 && <Text style={styles.tasksCounterBold}>{tasksCounter} {tasksCounterText}</Text>}
       </View>
     </View>
   )
